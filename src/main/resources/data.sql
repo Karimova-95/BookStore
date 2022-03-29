@@ -24,28 +24,3 @@ insert into books (author, title, priceOld, price) values ('Helyn Schneidar', 'U
 insert into books (author, title, priceOld, price) values ('Bette-ann Askem', 'E-enable dot-com supply-chains', '$297.83', '$110.15');
 insert into books (author, title, priceOld, price) values ('Dom Robuchon', 'Facilitate efficient eyeballs', '$232.30', '$131.48');
 
-insert into authors (name) values ('Drucie Goodbourn');
-insert into authors (name) values ('Marcia Aggiss');
-insert into authors (name) values ('Giovanni Bigg');
-insert into authors (name) values ('Duffie Eynon');
-insert into authors (name) values ('Anselma McKennan');
-insert into authors (name) values ('Gert Kira');
-insert into authors (name) values ('Clerc Djakovic');
-insert into authors (name) values ('Stacee Elsy');
-insert into authors (name) values ('Dorotea Bonhill');
-insert into authors (name) values ('Minni Bunney');
-insert into authors (name) values ('Berty Gandley');
-insert into authors (name) values ('Raynard Tesdale');
-insert into authors (name) values ('Joanna Hutfield');
-insert into authors (name) values ('Dannie Glidder');
-insert into authors (name) values ('Timmie Adshede');
-insert into authors (name) values ('Fernando Neads');
-insert into authors (name) values ('Teddy Guilliland');
-insert into authors (name) values ('Paloma Grebert');
-insert into authors (name) values ('Kristos Usher');
-insert into authors (name) values ('Darcey Rohmer');
-insert into authors (name) values ('Cristie Isacsson');
-insert into authors (name) values ('Lindsay Coutthart');
-insert into authors (name) values ('Helyn Schneidar');
-insert into authors (name) values ('Bette-ann Askem');
-insert into authors (name) values ('Dom Robuchon');
