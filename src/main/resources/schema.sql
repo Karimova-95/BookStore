@@ -12,7 +12,7 @@ CREATE TABLE books
 DROP TABLE IF EXISTS authors;
 CREATE TABLE authors
 (
-    id   INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(250) NOT NULL,
-    foreign key (name) references books(author)
+    id         INT NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name  VARCHAR(50) NOT NULL
 );

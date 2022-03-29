@@ -1,72 +1,72 @@
 package ru.bell.bookstore.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import ru.bell.bookstore.data.AuthorService;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import ru.bell.bookstore.data.Book;
 import ru.bell.bookstore.data.BookService;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
 @Controller
-@RequestMapping("/bookshop")
+@RequiredArgsConstructor
 public class MainPageController {
 
     private final BookService bookService;
-    private final AuthorService authorService;
 
-    @Autowired
-    public MainPageController(BookService bookService, AuthorService authorService) {
-        this.bookService = bookService;
-        this.authorService = authorService;
+    @ModelAttribute("recommendedBooks")
+    public List<Book> recommendedBooks() {
+        return bookService.getBooksData();
     }
 
-    @GetMapping("/main")
-    public String mainPage(Model model) {
-        model.addAttribute("bookData", bookService.getBooksData());
-        model.addAttribute("searchPlaceholder", "new search placeholder");
-        model.addAttribute("serverTime", new Date());
-        model.addAttribute("placeholderTextPart2", "SERVER");
-        model.addAttribute("messageTemplate", "searchbar.placeholder2");
+    @GetMapping("/")
+    public String mainPage() {
         return "index";
     }
 
-    @GetMapping("/genres")
-    public String getGenres() {
-        return "/genres/index";
+    @GetMapping("/cart")
+    public String getCart() {
+        return "cart";
     }
 
-    @GetMapping("/authors")
-    public String getAuthors(Model model) {
-        model.addAttribute("authorDataA", authorService.getAuthorsDataA());
-        model.addAttribute("authorDataB", authorService.getAuthorsDataB());
-        model.addAttribute("authorDataC", authorService.getAuthorsDataC());
-        model.addAttribute("authorDataD", authorService.getAuthorsDataD());
-        model.addAttribute("authorDataE", authorService.getAuthorsDataE());
-        model.addAttribute("authorDataF", authorService.getAuthorsDataF());
-        model.addAttribute("authorDataG", authorService.getAuthorsDataG());
-        model.addAttribute("authorDataH", authorService.getAuthorsDataH());
-        model.addAttribute("authorDataI", authorService.getAuthorsDataI());
-        model.addAttribute("authorDataJ", authorService.getAuthorsDataJ());
-        model.addAttribute("authorDataK", authorService.getAuthorsDataK());
-        model.addAttribute("authorDataL", authorService.getAuthorsDataL());
-        model.addAttribute("authorDataM", authorService.getAuthorsDataM());
-        model.addAttribute("authorDataN", authorService.getAuthorsDataN());
-        model.addAttribute("authorDataO", authorService.getAuthorsDataO());
-        model.addAttribute("authorDataP", authorService.getAuthorsDataP());
-        model.addAttribute("authorDataQ", authorService.getAuthorsDataQ());
-        model.addAttribute("authorDataR", authorService.getAuthorsDataR());
-        model.addAttribute("authorDataS", authorService.getAuthorsDataS());
-        model.addAttribute("authorDataT", authorService.getAuthorsDataT());
-        model.addAttribute("authorDataU", authorService.getAuthorsDataU());
-        model.addAttribute("authorDataV", authorService.getAuthorsDataV());
-        model.addAttribute("authorDataW", authorService.getAuthorsDataW());
-        model.addAttribute("authorDataX", authorService.getAuthorsDataX());
-        model.addAttribute("authorDataY", authorService.getAuthorsDataY());
-        model.addAttribute("authorDataZ", authorService.getAuthorsDataZ());
-        return "/authors/index";
+    @GetMapping("/postponed")
+    public String getPostponed() {
+        return "postponed";
+    }
+
+    @GetMapping("/signin")
+    public String signIn() {
+        return "signin";
+    }
+
+    @GetMapping("/about")
+    public String getAbout() {
+        return "about";
+    }
+
+    @GetMapping("/documents")
+    public String getDocuments() {
+        return "documents/index";
+    }
+
+    @GetMapping("/documents/slug")
+    public String getDocumentsSlug() {
+        return "documents/slug";
+    }
+
+    @GetMapping("/search")
+    public String search() {
+        return "search/index";
+    }
+
+    @GetMapping("/faq")
+    public String getFaq() {
+        return "faq";
+    }
+
+    @GetMapping("/contacts")
+    public String getContacts() {
+        return "contacts";
     }
 }
